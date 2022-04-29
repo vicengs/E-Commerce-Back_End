@@ -21,10 +21,9 @@ Product.init({
        ,autoIncrement: true
     },
     // Define product_name column
-    productName: {
+    product_name: {
         type:      DataTypes.STRING
        ,allowNull: false
-       ,field:     "product_name"
     },
     // Define price column
     price: {
@@ -44,9 +43,8 @@ Product.init({
         }
     },
     // Define category_id column (fk)
-    categoryId: {
+    category_id: {
         type:  DataTypes.INTEGER
-       ,field: "category_id"
        ,references: {
             model: "categories"
            ,key:   "id"
@@ -57,7 +55,7 @@ Product.init({
     sequelize,
     timestamps: false,
     freezeTableName: false,
-    underscored: true,
+    //underscored: true,
     modelName: "product",
 });
 // Export module Product

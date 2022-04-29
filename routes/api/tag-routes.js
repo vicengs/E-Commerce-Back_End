@@ -1,11 +1,34 @@
+/* ------------------------------ */
+/* Project  : E-Commerce Back End */
+/* File     : tag-routes.js       */
+/* Author   : Vicente Garcia      */
+/* Date     : 04/28/2022          */
+/* Modified : 04/28/2022          */
+/* ------------------------------ */
+// Add router express module to use
 const router = require('express').Router();
-const { Tag, Product, ProductTag } = require('../../models');
-
-// The `/api/tags` endpoint
-
+// Include Tag, Product and transactional model to use
+const { Tag, Product, ProductTag, Category } = require('../../models');
+// GET /api/tags
 router.get('/', (req, res) => {
-  // find all tags
-  // be sure to include its associated Product data
+    // Access our Category model to get all categories
+    Tag.findAll({
+        //attributes: ["id", "tag_name"]
+       //,order:      ["id"]
+        // JOIN to Product through ProductTag to get its fields
+       include: [
+            { model: Product
+              //,attributes: ["id", "product_name", "price", "stock", "category_id"]
+              ,through: ProductTag
+              ,as: 'products'
+            }
+        ]
+    })
+    .then(dbTagData => res.json(dbTagData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 router.get('/:id', (req, res) => {

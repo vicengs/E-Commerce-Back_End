@@ -21,17 +21,16 @@ Tag.init({
      ,autoIncrement: true
     },
     // Define tag_name column
-    tagName: {
+    tag_name: {
         type:      DataTypes.STRING
        ,allowNull: true
-       ,field:     "tag_name"
     }
 },
 {
     sequelize,
     timestamps: false,
     freezeTableName: false,
-    underscored: true,
+    //underscored: true,
     modelName: "tag",
 });
 // Export module Tag

@@ -21,20 +21,18 @@ ProductTag.init({
        ,autoIncrement: true
     },
     // Define product_id column (fk)
-    productId: {
+    product_id: {
         type:  DataTypes.INTEGER
-       ,field: "product_id"
        ,references: {
-            model: "product"
+            model: "products"
            ,key:   "id"
         }
     },
-    // Define category_id column (fk)
-    tagId: {
+    // Define tag_id column (fk)
+    tag_id: {
         type:  DataTypes.INTEGER
-       ,field: "tag_id"
        ,references: {
-            model: "tag"
+            model: "tags"
            ,key:   "id"
         }
     }
@@ -43,7 +41,7 @@ ProductTag.init({
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    underscored: true,
+    //underscored: true,
     modelName: "product_tag",
 });
 // Export module ProductTag

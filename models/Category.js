@@ -21,17 +21,16 @@ Category.init({
        ,autoIncrement: true
     },
     // Define category_name column
-    categoryName: {
+    category_name: {
         type:      DataTypes.STRING
        ,allowNull: false
-       ,field:     "category_name"
     }
 },
 {
     sequelize,
     timestamps: false,
     freezeTableName: false,
-    underscored: true,
+    //underscored: true,
     modelName: "category",
 });
 // Export module Category
