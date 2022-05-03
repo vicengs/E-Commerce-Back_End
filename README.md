@@ -80,4 +80,4 @@ MIT License - A short and simple permissive license with conditions only requiri
 ## Screenshots
     
 ![Application](/assets/images/application.jpg)
-![Insomnia](/assets/images/queries.jpg)
+![Insomnia](/assets/images/insomnia.jpg)
