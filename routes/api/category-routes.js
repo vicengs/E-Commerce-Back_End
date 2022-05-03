@@ -3,7 +3,7 @@
 /* File     : category-routes.js  */
 /* Author   : Vicente Garcia      */
 /* Date     : 04/28/2022          */
-/* Modified : 04/28/2022          */
+/* Modified : 04/29/2022          */
 /* ------------------------------ */
 // Add router express module to use
 const router = require("express").Router();
@@ -37,7 +37,7 @@ router.get("/:id", (req, res) => {
     })
     .then(dbCategoryData => {
         if (!dbCategoryData) {
-            res.status(404).json({ message: 'No category found with this id' });
+            res.status(404).json({ message: "No category found with this id" });
             return;
         }
         res.json(dbCategoryData);
@@ -68,7 +68,7 @@ router.put("/:id", (req, res) => {
     )
     .then(dbCategoryData => {
         if (!dbCategoryData[0]) {
-            res.status(404).json({ message: 'No category found with this id' });
+            res.status(404).json({ message: "No category found with this id" });
             return;
         }
         res.json(dbCategoryData);
@@ -86,7 +86,7 @@ router.delete("/:id", (req, res) => {
     )
     .then(dbCategoryData => {
         if (!dbCategoryData) {
-            res.status(404).json({ message: 'No category found with this id' });
+            res.status(404).json({ message: "No category found with this id" });
             return;
         }
         res.json(dbCategoryData);

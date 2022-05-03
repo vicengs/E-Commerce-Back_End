@@ -24,24 +24,23 @@ Product.belongsToMany(Tag, {
    ,as: "tags"
    ,foreignKey: "product_id"
 });
+/*ProductTag.belongsTo(Product, {
+    foreignKey: 'product_id'
+});
+Product.hasMany(ProductTag, {
+    foreignKey: 'product_id'
+});*/
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
     through: ProductTag
    ,as: "products"
    ,foreignKey: "tag_id"
 });
-
-ProductTag.belongsTo(Product, {
-    foreignKey: 'product_id'
-});
-ProductTag.belongsTo(Tag, {
+/*ProductTag.belongsTo(Tag, {
     foreignKey: 'tag_id'
-});
-Product.hasMany(ProductTag, {
-    foreignKey: 'product_id'
 });
 Tag.hasMany(ProductTag, {
     foreignKey: 'tag_id'
-});
-
+});*/
+// Export model relationships of Product, Category and Tag
 module.exports = { Product, Category, Tag, ProductTag };

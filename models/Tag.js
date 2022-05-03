@@ -3,7 +3,7 @@
 /* File     : Tag.js              */
 /* Author   : Vicente Garcia      */
 /* Date     : 04/28/2022          */
-/* Modified : 04/28/2022          */
+/* Modified : 04/29/2022          */
 /* ------------------------------ */
 // Import important parts of sequelize library
 const { Model, DataTypes } = require("sequelize");
